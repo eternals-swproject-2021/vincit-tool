@@ -1,29 +1,20 @@
 const router = require('express').Router();
-
+const path = require('path');
 
 router.post('/upload',async(req,res)=>{
    try{
         if(!req.files){
-            res.send({
-                status: false,
-                message: 'File is not uploaded'
-            });
+            res.sendStatus(503);
         }else{
             let img = req.files.img;
-
-            //place file in upload directory
-            img.mv('./uploads/' + img.name)
-            res.send({
-                status: true,
-                message: 'File is uploaded',
-                data:{
-                    name:img,
-                    mimetype:img.mimetype,
-                    size:img.size
-                }
-            });
+            if(path.extname(img.name) == '.png' | '.jpg'){
+                  //place file in upload directory
+                  img.mv('./uploads/' + img.name);
+                  res.sendStatus(200);
+            }else{
+                res.sendStatus(503);
+            }
         }
-
 
    }catch(err){
        res.status(500).send(err);
