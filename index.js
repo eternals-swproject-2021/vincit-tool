@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(morgan('dev'));
 
 //routes
-app.use('/acheck/',checkImage);
+app.use('/api/',checkImage);
 
 app.use((req, res)=>{
     res.sendStatus(404);
