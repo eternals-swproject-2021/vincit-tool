@@ -19,7 +19,7 @@ const Contact = () => {
     };
 
     return (
-        <section id='contact'>
+        <div>
             <h1 className="headline">Get In Touch</h1>
             <div className="contact">
                 <div className="container contact__container">
@@ -27,13 +27,11 @@ const Contact = () => {
                         <article className="contact__option">
                             <HiOutlineMail className="contact__option-icon" />
                             <h4>Product Owner</h4>
-                            <h5>jarno.ojala@vincit.com</h5>
                             <a href="mailto:jarno.ojala@vincit.com" target="_blank">Send a message</a>
                         </article>
                         <article className="contact__option">
                             <BsPersonFill className="contact__option-icon" />
                             <h4>Project Coordinator</h4>
-                            <h5>jari.porras@lut.fi</h5>
                             <a href="mailto:jari.porras@lut.fi" target="_blank">Send a message</a>
                         </article>
                         <article className="contact__option">
@@ -50,8 +48,7 @@ const Contact = () => {
                     </form>
                 </div>
             </div>
-
-        </section>
+        </div>
     )
 }
 
