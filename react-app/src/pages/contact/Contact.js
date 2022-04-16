@@ -7,17 +7,18 @@ import emailjs from 'emailjs-com'
 
 const Contact = () => {
     const form = useRef();
+    
     const sendEmail = (e) => {
         e.preventDefault();
-        emailjs.sendForm('service_f58ydd9', 'template_urme8pn', form.current)
-            .then(function (response) {
-                console.log('SUCCESS!', response.status, response.text);
-            }, function (error) {
-                console.log('FAILED...', error);
+        emailjs.sendForm('service_f58ydd9', 'template_urme8pn', form.current, 'mGj89G4WsnsSUt1jc')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
             });
-        e.target.reset()
+        e.target.reset() 
     };
-
+    
     return (
         <div>
             <h1 className="headline">Get In Touch</h1>
