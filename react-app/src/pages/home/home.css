@@ -1,0 +1,119 @@
+.headline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subheader {
+    margin: -1px;
+    font-weight: 600;
+}
+
+.hvr-icon-forward {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    margin: 0.4em;
+    padding: 1em;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 9999px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #F07D4F;
+    text-decoration: none;
+    color: #F07D4F;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hvr-icon-forward .hvr-icon {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    margin-left: 5px;
+  }
+
+  .hvr-icon-forward:hover .hvr-icon, .hvr-icon-forward:focus .hvr-icon, .hvr-icon-forward:active .hvr-icon {
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px);
+  }
+
+.ref-link:hover {
+    color: white;
+    border-color: white;
+    background-color: #F07D4F;
+}
+
+.brief-description {
+    background-color: #F07D4F;
+}
+
+.header-desc {
+    position: relative;
+    top: 10%;
+    left: 3%;
+    display: inline;
+    margin: 1.5rem 0;
+    color: black;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.description_ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+    margin: 4rem 0 2rem 0;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.description_ul_li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.description_ul_li_p {
+    font-size: 1rem;
+    padding: 1rem;
+    color: white;
+}
+
+.description_ul_li_img {
+    width: 7rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.navigate-icon {
+    height: 5em;
+    width: 2em;
+    color: white;
+}
+
+
+
