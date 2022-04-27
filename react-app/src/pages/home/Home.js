@@ -34,37 +34,34 @@ const Home = () => {
                         <li class="description_ul_li">
                             <img src={HOWTO1} class="description_ul_li_img" alt="upload-screenshot"></img>
                             <p class="description_ul_li_p">
-                                Upload the screenshot<br/>Upload the screenshot<br/>Upload the screenshot
+                                Upload the screenshot <br/>  <br/>
                             </p>
                         </li>
                         <MdNavigateNext className="navigate-icon"/>
                         <li class="description_ul_li">
                             <img src={HOWTO2} class="description_ul_li_img" alt="evaluate-tool"></img>
                             <p class="description_ul_li_p">
-                                Let our tool evaluate <br/> the color contrast<br/>on your screenshot 
+                                Let our tool evaluate <br/> the color contrast
                             </p>
                         </li>
                         <MdNavigateNext className="navigate-icon"/>
                         <li class="description_ul_li">
                             <img src={HOWTO3} class="description_ul_li_img" alt="get-report"></img>
                             <p class="description_ul_li_p">
-                                Get a report! <br/> Get a report! <br/> Get a report!
+                                Get a report! <br/>  <br/>
                             </p>
                         </li>
                         <BsCheckAll className="navigate-icon"/>
                         <li class="description_ul_li">
                             <img src={HOWTO4} class="description_ul_li_img" alt="open-source"></img>
                             <p class="description_ul_li_p">
-                               * Open-source :) <br/> * Open-source :) <br/> * Open-source :)
+                               * Open-source :) <br/>  <br/>
                             </p>
                         </li>
                     </ul>
                 </div>
-
             </div>
         </div>
-
-
     )
 }
 
