@@ -28,24 +28,24 @@ const Contact = () => {
                         <article className="contact__option">
                             <HiOutlineMail className="contact__option-icon" />
                             <h4>Product Owner</h4>
-                            <a href="mailto:jarno.ojala@vincit.com" target="_blank">Send a message</a>
+                            <a href="mailto:jarno.ojala@vincit.com" target="_blank">send a message</a>
                         </article>
                         <article className="contact__option">
                             <BsPersonFill className="contact__option-icon" />
                             <h4>Project Coordinator</h4>
-                            <a href="mailto:jari.porras@lut.fi" target="_blank">Send a message</a>
+                            <a href="mailto:jari.porras@lut.fi" target="_blank">send a message</a>
                         </article>
                         <article className="contact__option">
                             <AiFillGithub className="contact__option-icon" />
                             <h4>Team's GitHub</h4>
-                            <a href="https://github.com/eternals-swproject-2021/vincit-tool">Visit Source Code</a>
+                            <a href="https://github.com/eternals-swproject-2021/vincit-tool">view source code</a>
                         </article>
                     </div>
                     <form ref={form} onSubmit={sendEmail}>
                         <input type="text" name="" placeholder="Your Full Name" required />
                         <input type="email" name="email" placeholder="Your Email" required />
                         <textarea name="message" rows="7" placeholder="Your Message" required></textarea>
-                        <button type="submit" className="btn-submit">Send Message</button>
+                        <button type="submit" className="btn-submit">Send A Message</button>
                     </form>
                 </div>
             </div>
