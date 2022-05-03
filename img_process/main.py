@@ -1,10 +1,11 @@
 import process
 import cv2
+import sys
 
-img = cv2.imread('../uploads/img2.png')
-
+img = cv2.imread('./uploads/'+sys.argv[1])
 image_data =process.ImageProcess(img)
-X = image_data.dilate_image()
+image_data.dilate_image(sys.argv[1])
+
 
 
 

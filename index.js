@@ -7,7 +7,6 @@ const checkImage = require('./routes/checkimage');
 const app = express();
 
 dotenv.config();
-
 //enable file upload
 app.use(fileUpload({
     createParentPath:true
@@ -21,6 +20,7 @@ app.use(morgan('dev'));
 
 //routes
 app.use('/api/',checkImage);
+
 
 app.use((req, res)=>{
     res.sendStatus(404);

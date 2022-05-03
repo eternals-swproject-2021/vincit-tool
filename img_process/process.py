@@ -1,7 +1,6 @@
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
-import base64
 import detect
 import json
 
@@ -10,7 +9,7 @@ class ImageProcess():
     def __init__(self, img):
         self.img = img
 
-    def dilate_image(self):
+    def dilate_image(self,img_name):
         img = self.img
         mask = np.ones(img.shape[:2], np.uint8)
         img_gray =  cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -18,9 +17,9 @@ class ImageProcess():
         ret,thresh = cv2.threshold(img_gray, 128, 255,cv2.THRESH_OTSU|cv2.THRESH_BINARY)
         rect_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (45,45))
         dilation = cv2.dilate(thresh,rect_kernel, iterations = 1)
-        self.draw_contours(dilation)
+        self.draw_contours(dilation,img_name)
     
-    def draw_contours(self,dilation_img):
+    def draw_contours(self,dilation_img,img_name):
         contours, hierarchy = cv2.findContours(dilation_img, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
         output = {}
         font = cv2.FONT_HERSHEY_SIMPLEX
@@ -30,7 +29,7 @@ class ImageProcess():
         for cnt in contours:
             if cv2.contourArea(cnt) > 0:
                 x, y, w, h = cv2.boundingRect(cnt)
-                cv2.rectangle(img2, (x, y), (x + w, y + h), (255,0,0), 2)
+                cv2.rectangle(img2, (x, y), (x + w, y + h), (0,0,255), 4)
                 ROI = self.img[y:y+h, x:x+w]
                 img_arr = {}
                 num+=1
@@ -49,9 +48,9 @@ class ImageProcess():
                 img_list.append(img_arr)
                 cv2.putText(img2,str(num),(x-5,y+45), font, 2,(0,255,0),3)
 
-        cv2.imwrite('../contours/img2.png',img2)
+        cv2.imwrite('./contours/'+img_name,img2)
         output["sub"] = img_list
-        output["img"] = "../contours/img2.png"
+        output["img"] = "./contours/"+img_name
         output["height"] = self.img.shape[0]
         output["width"] = self.img.shape[1]
         print(json.dumps(output))
