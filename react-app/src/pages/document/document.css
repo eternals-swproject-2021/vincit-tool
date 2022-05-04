@@ -1,0 +1,44 @@
+.headline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lead {
+    font-size: 16px;
+    text-align: justify;
+}
+
+.color-section {
+    background-color: #F07D4F;
+}
+
+.topic-header {
+    display: inline;
+    margin: 1.5rem 0;
+    color: black;
+    font-weight: 600;
+    padding-left: 50px;
+}
+
+.topic-content {
+    font-weight: 400;
+    font-size: 16px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 1rem;
+    color: black;
+    text-align: justify;
+}
+
+.method-header {
+    text-align: center;
+    color: #F07D4F;
+    padding-bottom: 16px;
+}
+
+.method-content {
+    text-align: justify;
+    font-size: 16px;
+
+}
