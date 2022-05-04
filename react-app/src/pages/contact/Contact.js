@@ -1,24 +1,33 @@
 import React, { useRef } from 'react'
-import './contact.css'
 import { HiOutlineMail } from 'react-icons/hi'
 import { BsPersonFill } from 'react-icons/bs'
 import { AiFillGithub } from 'react-icons/ai'
 import emailjs from 'emailjs-com'
+import Swal from 'sweetalert2'
+import './contact.css'
+
 
 const Contact = () => {
     const form = useRef();
-    
+
     const sendEmail = (e) => {
         e.preventDefault();
         emailjs.sendForm('service_f58ydd9', 'template_urme8pn', form.current, 'mGj89G4WsnsSUt1jc')
             .then((result) => {
-                console.log(result.text);
+                Swal.fire({
+                    title: 'Email Successfully Sent',
+                    icon: 'success'
+                })
             }, (error) => {
+                Swal.fire({
+                    title: 'Email Failed to Send',
+                    icon: 'error'
+                })
                 console.log(error.text);
             });
-        e.target.reset() 
+        e.target.reset()
     };
-    
+
     return (
         <div>
             <h1 className="headline">Get In Touch</h1>
