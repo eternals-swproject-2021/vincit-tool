@@ -1,6 +1,10 @@
 const router = require('express').Router();
 const path = require('path');
 const {spawn} = require('child_process')
+const axios = require('axios');
+const { env } = require('process');
+
+
 var imgName;
 
 router.post('/upload',(req,res)=>{
@@ -27,20 +31,31 @@ router.post('/upload',(req,res)=>{
 
 router.post('/evaluate', (req,res)=>{
     try{
+        var dataToSend;
         if(imgName != undefined || variable != null){
-
-            var dataToSend;
             // spawn new child process to call the python script
             const imgScript = spawn('python3', ['./img_process/main.py',imgName]);
             // collect data from script
             imgScript.stdout.on('data',  (data)=> {
                 dataToSend = data.toString();
+                
             });
+
 
             imgScript.on('close', (code) => {
                 imgName = undefined;
                 res.send(dataToSend);
+                //console.log(JSON.parse(dataToSend));
+                    
+                axios.post('http://'+env.HOST+":"+ env.PORT+"/api/color-contrast",JSON.parse(dataToSend))
+                .then((response)=>{
+                    console.log(response.data)
+                });
+                
+                
              });
+
+            
      }else{
         res.status(500).send("Image not found");
      }

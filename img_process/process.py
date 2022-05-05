@@ -19,7 +19,7 @@ class ImageProcess():
         rect_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (25,25))
         edges = cv2.dilate(edges, rect_kernel, iterations = 1)
         
-        self.draw_contours(edges,img_name)
+        return self.draw_contours(edges,img_name)
     
     def draw_contours(self,img,img_name):
         output = {}
@@ -50,6 +50,9 @@ class ImageProcess():
                 img_arr["color_1"] = color_1
                 img_arr["color_2"] = color_2
 
+                img_arr["is_bold"] = False
+                img_arr["text_size"] = 19
+
                 img_list.append(img_arr)
                 cv2.putText(img2,str(num),(x-5,y+15), font, 2,(0,255,0),3)
 
@@ -58,9 +61,8 @@ class ImageProcess():
         output["img"] = "./contours/"+img_name
         output["height"] = self.img.shape[0]
         output["width"] = self.img.shape[1]
-        print((output))
 
-        #return json.dumps(output)
+        return json.dumps(output)
 
    
 
