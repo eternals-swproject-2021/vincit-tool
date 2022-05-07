@@ -44,14 +44,16 @@ router.post('/evaluate', (req,res)=>{
 
             imgScript.on('close', (code) => {
                 imgName = undefined;
-                res.send(dataToSend);
+                //res.send(dataToSend);
                 //console.log(JSON.parse(dataToSend));
                     
                 axios.post('http://'+env.HOST+":"+ env.PORT+"/api/color-contrast",JSON.parse(dataToSend))
                 .then((response)=>{
-                    console.log(response.data)
+                    //console.log(response.data);
+                    res.send(response.data)
                 });
                 
+               
                 
              });
 

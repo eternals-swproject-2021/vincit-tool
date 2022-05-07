@@ -62,7 +62,8 @@ class ImageProcess():
         output["height"] = self.img.shape[0]
         output["width"] = self.img.shape[1]
 
-        return json.dumps(output)
+        #return json.dumps(output)
+        return output
 
    
 
