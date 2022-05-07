@@ -1,11 +1,9 @@
 import React, { useRef } from 'react'
-import { HiOutlineMail } from 'react-icons/hi'
-import { BsPersonFill } from 'react-icons/bs'
-import { AiFillGithub } from 'react-icons/ai'
 import emailjs from 'emailjs-com'
 import Swal from 'sweetalert2'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './contact.css'
-
 
 const Contact = () => {
     const form = useRef();
@@ -28,33 +26,45 @@ const Contact = () => {
         e.target.reset()
     };
 
+    const notify = () => toast.info("Sending a message...", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    });
+
     return (
         <div>
-            <h1 className="headline">Get In Touch</h1>
+            <h1 className="headline">Contact Us</h1>
             <div className="contact">
                 <div className="container contact__container">
-                    <div className="contact__options">
-                        <article className="contact__option">
-                            <HiOutlineMail className="contact__option-icon" />
-                            <h4>Product Owner</h4>
-                            <a href="mailto:jarno.ojala@vincit.com" target="_blank">send a message</a>
-                        </article>
-                        <article className="contact__option">
-                            <BsPersonFill className="contact__option-icon" />
-                            <h4>Project Coordinator</h4>
-                            <a href="mailto:jari.porras@lut.fi" target="_blank">send a message</a>
-                        </article>
-                        <article className="contact__option">
-                            <AiFillGithub className="contact__option-icon" />
-                            <h4>Team's GitHub</h4>
-                            <a href="https://github.com/eternals-swproject-2021/vincit-tool">view source code</a>
-                        </article>
+                    <div>
+                        <div>
+                            <h2 className="subheader-line">Let's get<br />in touch! </h2>
+                            <h5><i>We'd love to hear more from you...</i></h5>
+                        </div>
+                        <div className="subheader-content">
+                            Please write us a message, or please feel free to visit the source code on our  <a href="https://github.com/eternals-swproject-2021/vincit-tool" target="_blank">GitHub</a> repository.
+                        </div>
                     </div>
+
                     <form ref={form} onSubmit={sendEmail}>
                         <input type="text" name="" placeholder="Your Full Name" required />
                         <input type="email" name="email" placeholder="Your Email" required />
-                        <textarea name="message" rows="7" placeholder="Your Message" required></textarea>
-                        <button type="submit" className="btn-submit">Send A Message</button>
+                        <textarea name="message" rows="7" placeholder="Your Message" required ></textarea>
+                        <button type="submit" className="btn-submit" onClick={notify}>Send A Message </button>
+                        <ToastContainer
+                            position="top-right"
+                            autoClose={5000}
+                            hideProgressBar={false}
+                            newestOnTop={false}
+                            closeOnClick
+                            rtl={false}
+                            pauseOnFocusLoss={false}
+                        />
                     </form>
                 </div>
             </div>
