@@ -23,7 +23,7 @@ const About = () => {
                 <div className="i-left">
                     <div className="i-wrapper">
                         <img src={SE4GD} alt="se4gd-logo" className="se4gd-logo"></img>
-                        <h2 className="i-name">SE4GD Program, LUT University</h2>
+                        <h2 className="i-name">SE4GD, LUT University</h2>
                         <h1 className="i-intro">"Sustainability matters!"</h1>
                         <div className="i-content">
                             <p>The SE4GreenDeal Programme educates experts to innovate, design and implement software-based solutions with sustainable effect in mind for local and global sustainability challenges. We will have an impact on individuals, societies, industries and governments through new responsible ways of developing systems. </p>
@@ -37,8 +37,8 @@ const About = () => {
                         <h2 className="i-name">VINCIT Company</h2>
                         <h1 className="i-intro-2">"Humanizing digitalization."</h1>
                         <div className="i-content">
-                            <p> Vincit works tirelessly on making digital evermore productive and easier to manage. Be it programming, service design or even something that’s yet to be invented. Our goal is a world without anxiety toward technology or fear of what tomorrow may bring.</p>
-                            <p>We want to design visually accessible services and websites requires knowledge of minimum contrasts and accessible colour choices. <b>How might we make checking the visual accessibility easy?</b></p>
+                            <p>Vincit works tirelessly on making digital evermore productive and easier to manage. Be it programming, service design or even something that’s yet to be invented. Our goal is a world without anxiety toward technology or fear of what tomorrow may bring.</p>
+                            <br/><p>We want to design visually accessible services and websites requires knowledge of minimum contrasts and accessible colour choices. <b>How might we make checking the visual accessibility easy?</b></p>
                         </div>
                     </div>
                 </div>
@@ -119,7 +119,6 @@ const About = () => {
                 </div>
             </section>
         </div>
-
     )
 }
 
