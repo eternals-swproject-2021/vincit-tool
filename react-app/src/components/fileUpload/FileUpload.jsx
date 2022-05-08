@@ -9,13 +9,13 @@ const FileUpload = ({ files, setFiles, removeFile }) => {
         file.isUploading = true;
         setFiles([...files, file])
 
-        // upload file
         const formData = new FormData();
         formData.append(
             "newFile",
             file,
             file.name
         )
+
         axios.post('http://localhost:8080/upload', formData)
             .then((res) => {
                 file.isUploading = false;
@@ -28,19 +28,15 @@ const FileUpload = ({ files, setFiles, removeFile }) => {
     }
 
     return (
-        <>
+        <div>
             <div className="file-card">
-                <div className="file-inputs">
-                    <input type="file" accept="image/x-png,image/gif,image/jpeg" onChange={uploadHandler} />
-                    <button>
-                        Upload
-                    </button>
+                <div className="header-p">
+                    <p className="main">Supports: </p>
+                    <p className="info">.JPG /.PNG </p>
                 </div>
-                <p className="main">Supports files: </p>
-                <p className="info">.JPG and .PNG only</p>
-
+                <input type="file" accept="image/x-png,image/jpg,image/jpeg" onChange={uploadHandler} />
             </div>
-        </>
+        </div>
     )
 }
 

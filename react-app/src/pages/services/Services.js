@@ -51,12 +51,13 @@ const Services = () => {
 
     return (
         <div>
-            <h1 className="headline">Check Contrast</h1>
-            <div class="px-4 py-5 text-center">
+         <h1 className="headline">Check Contrast</h1>
+           <div class="px-4 text-center" className="upload-form">
                 <FileUpload files={files} setFiles={setFiles}
                     removeFile={removeFile} />
+                     <FileList className="file-list" files={files} removeFile={removeFile} />
             </div>
-            <FileList className="file-list" files={files} removeFile={removeFile} />
+           
             <div>
                 {files.length === 0
                     ? <input className="evaluate-btn" type="submit" value="Evaluate" disabled="true" />

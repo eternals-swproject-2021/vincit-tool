@@ -7,7 +7,7 @@ export default function LoadingSpinner() {
             <div className="spinner-container">
                 <div className="loading-spinner"></div>
             </div>
-            <p className="wait-header">Evaluation is in progress. Please wait. . .</p>
+            <p className="wait-header">Evaluation is in progress. Please wait...</p>
         </div>
     );
 }

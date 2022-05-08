@@ -6,7 +6,7 @@ import './fileItem.scss'
 const FileItem = ({ file, deleteFile }) => {
     return (
         <>
-            <li
+            {/* <li
                 className="file-item"
                 key={file.name}>
                 <FontAwesomeIcon icon={faFileAlt} />
@@ -22,7 +22,7 @@ const FileItem = ({ file, deleteFile }) => {
                             onClick={() => deleteFile(file.name)} />
                     }
                 </div>
-            </li>
+            </li> */}
         </>
     )
 }
