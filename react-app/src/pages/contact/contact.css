@@ -17,8 +17,7 @@
     display: grid;
     grid-template-columns: 30% 58%;
     gap: 12%;
-    padding-left: 4.5rem;
-    padding-right: 4.5rem;
+
 }
 
 .subheader-line{
