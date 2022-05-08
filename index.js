@@ -4,6 +4,7 @@ const fileUpload = require('express-fileupload');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const checkImage = require('./routes/checkimage');
+const colorChecker = require('./routes/colorcontrast');
 const app = express();
 
 dotenv.config();
@@ -20,6 +21,7 @@ app.use(morgan('dev'));
 
 //routes
 app.use('/api/',checkImage);
+app.use('/api', colorChecker);
 
 
 app.use((req, res)=>{
