@@ -6,7 +6,10 @@ export const Nav = styled.nav`
   background: #fff;
   height: 80px;
   display: flex;
-  padding: 1rem;
+  padding-top: 1rem;
+  padding-left:4.5rem;
+  padding-right:4.5rem;
+  padding-bottom: 1rem;
   z-index: 10;
   justify-content: flex-start;
 `;
