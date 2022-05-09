@@ -1,6 +1,5 @@
 import json
 import numpy as np
-import math 
 
 def check_height(x):
     if 80 <= x <= 97 :
@@ -56,7 +55,8 @@ def calculation(json_data):
         pt_size = (pxt_opt(px_size))
         text_size.append(pt_size)
 
-    id_font = dict(zip(id_list, text_size))
+        item['text_size'] = pt_size
+
 
     """     print(id_list)
     print(box_height_list)

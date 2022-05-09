@@ -16,7 +16,7 @@ class ImageProcess():
         img_gray = cv2.bitwise_and(img_gray,img_gray, mask=mask)
        
         edges = cv2.Canny(img_gray,128,255)
-        rect_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (25,25))
+        rect_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (15,15))
         edges = cv2.dilate(edges, rect_kernel, iterations = 1)
         
         return self.draw_contours(edges,img_name)
@@ -31,7 +31,7 @@ class ImageProcess():
         contours, hierarchy = cv2.findContours(img, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
         for cnt in contours:
-            if cv2.contourArea(cnt) > 1000:
+            if cv2.contourArea(cnt) > 2000:
                 x, y, w, h = cv2.boundingRect(cnt)
                 cv2.rectangle(img2, (x, y), (x + w, y + h), (0,255,0), 4)
                 ROI = self.img[y:y+h, x:x+w]
@@ -51,7 +51,6 @@ class ImageProcess():
                 img_arr["color_2"] = color_2
 
                 img_arr["is_bold"] = False
-                img_arr["text_size"] = 19
 
                 img_list.append(img_arr)
                 cv2.putText(img2,str(num),(x-5,y+15), font, 2,(0,255,0),3)
