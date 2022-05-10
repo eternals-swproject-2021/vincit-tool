@@ -41,6 +41,8 @@ const Services = () => {
                 // console.log(response.status);
                 console.log("result in service: ", response.data);
                 return response.data;
+
+              
             });  
 
             // setTimeout(() => setUploadPercentage(0), 10000);

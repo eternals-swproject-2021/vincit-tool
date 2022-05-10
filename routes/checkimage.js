@@ -38,41 +38,17 @@ router.post('/evaluate', (req, res) => {
     console.log("/evaluate is called")
     try {
         var dataToSend;
-<<<<<<< HEAD
-        console.log('img1: ' + imgName)
-        if(imgName != undefined || variable != null){
-=======
         if (imgName != undefined || variable != null) {
->>>>>>> 3a7ca2edd0ef46418a9f20b210f4ba4c8e824c3b
             console.log("imagName2: ", imgName)
             // spawn new child process to call the python script
             const imgScript = spawn('python3', ['./img_process/main.py', imgName]);
             // collect data from script
             imgScript.stdout.on('data', (data) => {
                 dataToSend = data.toString();
-<<<<<<< HEAD
-                console.log('dataToSend: ', dataToSend)
-
-=======
->>>>>>> 3a7ca2edd0ef46418a9f20b210f4ba4c8e824c3b
             });
 
             imgScript.on('close', (code) => {
                 imgName = undefined;
-<<<<<<< HEAD
-                    
-                axios.post("http://localhost:8080/api/color-contrast",JSON.parse(dataToSend))
-                .then((response)=>{
-                    res.send(response.data)
-                });
-             });
-
-            
-     }else{
-        res.status(500).send("Image not found");
-     }
-    }catch(err){
-=======
                 axios.post("http://localhost:8080/api/color-contrast", JSON.parse(dataToSend))
                     .then((res) => {
                         console.log("output:" , res.data);
@@ -84,7 +60,6 @@ router.post('/evaluate', (req, res) => {
             res.status(500).send("Image not found");
         }
     } catch (err) {
->>>>>>> 3a7ca2edd0ef46418a9f20b210f4ba4c8e824c3b
         res.status(500).send(err);
     }
 });
