@@ -4,31 +4,14 @@
     align-items: center;
 }
 
-.upload-section {
-    padding-top: 4.5rem;
-    padding-left: 4.5rem;
-    padding-right: 4.5rem;
+.upload-form {
+    padding-right: 4.5rem!important;
+    padding-left: 4.5rem!important;
 }
 
-progress {
-    display: flex;
-    height: 1rem;
-    overflow: hidden;
-    font-size: .75rem;
-    background-color: #e9ecef;
-    border-radius: 0.25rem;
-}
-
-.progress-bar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
-    color: #fff;
-    text-align: center;
-    white-space: nowrap;
-    background-color: #F07D4F;
-    transition: width .6s ease;
+.file-list {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 
 .evaluate-btn:disabled {
@@ -73,3 +56,5 @@ progress {
     background-color: #7AB155;
     border-color: #7AB155;
 }
+
+
