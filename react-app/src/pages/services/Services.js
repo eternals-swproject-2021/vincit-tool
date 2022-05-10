@@ -41,7 +41,7 @@ const Services = () => {
                 // console.log(response.status);
                 console.log("result in service: ", response.data);
                 return response.data;
-            });  
+            });
 
             // setTimeout(() => setUploadPercentage(0), 10000);
             // const { fileName, filePath } = res.data;
@@ -55,6 +55,17 @@ const Services = () => {
                 setMessage(err.response.data.msg);
             }
             setUploadPercentage(0)
+        }
+    };
+
+    const evaluate = (e) => {
+        try {
+            axios.post("http://localhost:8080/api/evaluate").then((response) => {
+                console.log("final result: ", response.data)
+                return response.data;
+            })
+        } catch (err) {
+            console.log(err)
         }
     };
 
@@ -74,14 +85,15 @@ const Services = () => {
                             />
                         </div>
 
-                        { filename == "Choose File" || isLoading
-                            ? <input type='submit' value='Evaluate' className='evaluate-btn' disabled="true" />
-                            : <input type='submit' value='Evaluate' className='evaluate-btn' />
+                        {filename == "Choose File" || isLoading
+                            ? <input type='submit' value='Upload' className='evaluate-btn' disabled="true" />
+                            : <input type='submit' value='Upload' className='evaluate-btn' />
                         }
 
                     </form>
-                    {isLoading ? <LoadingSpinner /> : <p>{filename}</p>}
+                    {/* {isLoading ? <LoadingSpinner /> : <p>{filename}</p>} */}
                 </Fragment>
+                <input type='submit' value='Evaluate' className='evaluate-btn' onClick={evaluate} />
             </div>
         </div>
 

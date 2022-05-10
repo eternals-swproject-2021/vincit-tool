@@ -20,10 +20,10 @@ router.post('/upload', (req, res) => {
                 imgName = img.name;
                 res.sendStatus(200);
                 console.log("imagName1: ", imgName)
-                axios.post("http://localhost:8080/api/evaluate").then((res) => {
-                    console.log("after evaluate result: ", res.data)
-                    return res.data;
-                })
+                // axios.post("http://localhost:8080/api/evaluate").then((response) => {
+                //     console.log("final result: ", response.data)
+                //     return response.data;
+                // })
             } else {
                 res.sendStatus(503);
             }
@@ -50,10 +50,9 @@ router.post('/evaluate', (req, res) => {
             imgScript.on('close', (code) => {
                 imgName = undefined;
                 axios.post("http://localhost:8080/api/color-contrast", JSON.parse(dataToSend))
-                    .then((res) => {
-                        console.log("output:" , res.data);
-                        // res.send(res.data)
-                        // return res.data;
+                    .then((response) => {
+                        console.log("result after check: ", response.data)
+                       return res.json(response.data);
                     });
             });
         } else {
