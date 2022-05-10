@@ -37,9 +37,9 @@ const Services = () => {
                         parseInt(Math.round((progressEvent.loaded * 100) / progressEvent.total))
                     );
                 }
-            }).then(function (response) {
-                console.log(response.status);
-                console.log(response.data);
+            }).then((response) => {
+                // console.log(response.status);
+                console.log("result in service: ", response.data);
                 return response.data;
             });  
 
