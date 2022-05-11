@@ -1,0 +1,26 @@
+.headline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.result-container-header {
+    padding-top: 1.5rem;
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+}
+
+.wcag-col {
+    justify-content: center;
+    display: flex;
+
+}
+
+.wcag-desc{
+    padding-top: 0.5rem;
+    padding-left: 9.5rem;
+    padding-right: 15rem
+}
