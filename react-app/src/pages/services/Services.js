@@ -1,24 +1,16 @@
 import React, { Fragment, useState, useEffect } from "react";
-import Message from "./Message";
-import Progress from "./Progress";
 import Result from "../result/Result";
-import LoadingSpinnerUpload from "../../components/loadingPage/LoadingSpinnerUpload";
-import LoadingSpinnerEvaluate from "../../components/loadingPage/LoadingSpinnerEvaluate";
+import axios from "axios";
 
-import axios from "axios"
-import "./services.css"
+import "./services.css";
 
 
 const Services = () => {
 
     const [file, setFile] = useState("");
     const [filename, setFilename] = useState("Choose File");
-    const [uploadedFile, setUploadedFile] = useState({});
-    const [message, setMessage] = useState("");
-    const [uploadPercentage, setUploadPercentage] = useState(0);
-    const [isUploading, setIsUploading] = useState(false);
-    const [isEvaluating, setIsEvaluating] = useState(false);
     const [results, setResults] = useState({});
+    const [displayedResults, setDisplayedResults] = useState({});
 
     const onChange = e => {
         setFile(e.target.files[0]);
@@ -35,41 +27,26 @@ const Services = () => {
         )
 
         try {
-            setIsUploading(true);
-            setIsEvaluating(false);
-            const response = await axios.post("http://localhost:8080/api/upload", formData, {
-                onUploadProgress: progressEvent => {
-                    setUploadPercentage(
-                        parseInt(Math.round((progressEvent.loaded * 100) / progressEvent.total))
-                    );
-                }
-            })
+            const response = await axios.post("http://localhost:8080/api/upload", formData)
             console.log(response.data);
-            setIsUploading(false);
-            setIsEvaluating(false);
-
-            // setTimeout(() => setUploadPercentage(0), 10000);
-            // const { fileName, filePath } = res.data;
-            // setUploadedFile({ fileName, filePath });
-            // setMessage("File Uploaded");
+            evaluate();
+            console.log(displayedResults);
 
         } catch (err) {
             if (err.response.status === 500) {
-                setMessage("There was a problem with the server");
+                console.log("There was a problem with the server");
             } else {
-                setMessage(err.response.data.msg);
+                console.log(err.response.data.msg);
             }
-            setUploadPercentage(0)
         }
     };
 
     const evaluate = async () => {
         try {
-            setIsUploading(false);
-            setIsEvaluating(true);
             const response = await axios.post("http://localhost:8080/api/evaluate")
             console.log(response.data);
             setResults(response.data);
+            setDisplayedResults(response.data);
         } catch (err) {
             console.log(err)
         }
@@ -78,15 +55,9 @@ const Services = () => {
     useEffect(() => {
     }, [results]);
 
-    const mapping = () => {
-        return results.map((item, index) => <p key={index}>{item.wcag_AA_percentage}</p>);
-      };
-
-
     return (
         <Fragment>
             <h1 className="headline">Check Contrast</h1>
-            {/* {message ? <Message msg={message} /> : null} */}
             <form onSubmit={onSubmit}>
                 <div class="custom-file mb-4" className="upload-section">
                     <input
@@ -98,29 +69,19 @@ const Services = () => {
                     />
                 </div>
                 <div className="btn-zone">
-                    {(filename == "Choose File" || isUploading)
-                        ? <input type="submit" value="Upload" className="upload-btn" disabled="true" />
-                        : <input type="submit" value="Upload" className="upload-btn" />
-                    }
-                    {(isUploading)
-                        ? <input type="button" value="Evaluate" className="evaluate-btn" onClick={evaluate} disabled="true" />
-                        : <input type="button" value="Evaluate" className="evaluate-btn" onClick={evaluate} />
+                    {(filename == "Choose File")
+                        ? <input type="submit" value="Evaluate" className="upload-btn" disabled="true" />
+                        : <input type="submit" value="Evaluate" className="upload-btn" />
                     }
 
                 </div>
             </form>
+            {JSON.stringify(results) == "{}"
+                ? null
+                : <Result displayedResults={displayedResults} />
+            }
 
-            {/* {isEvaluating ? <LoadingSpinnerEvaluate /> : <p> {JSON.stringify(results)}</p>} */}
-            {/* {isUploading ? <LoadingSpinnerEvaluate /> : <p> {JSON.stringify(results)}</p>} */}
 
-            {JSON.stringify(results)}
-            <div>
-                {/* <p>Image : {JSON.stringify(results.overall_img)}</p> */}
-                {/* <p>Overall WCAG AA: {JSON.stringify(results.wcag_AA_percentage)}</p>
-                <p>Overall WCAG AAA: {JSON.stringify(results.wcag_AAA_percentage)}</p> */}
-                
-            </div>
-            <Result/>
         </Fragment>
     );
 };
