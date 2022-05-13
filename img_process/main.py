@@ -10,8 +10,8 @@ def main():
            image_data =process.ImageProcess(img)
            json_output = image_data.dilate_image(sys.argv[1])
            return checktext.calculation(json_output)
-           #return json_output
-           #checktext.read_json_output(json_output)
+           return json_output
+           checktext.read_json_output(json_output)
 
     
 print(main())
