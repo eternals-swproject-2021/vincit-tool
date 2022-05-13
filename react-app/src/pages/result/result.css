@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    padding-top: 1.5rem;
+    padding-top: 4.5rem;
     padding-bottom: 1.5rem;
 }
 
@@ -16,6 +16,36 @@
     padding-left: 4.5rem;
     padding-right: 4.5rem;
     /* padding-bottom: 1.5rem; */
+}
+
+.risk-badge {
+    display: inline-block;
+    padding: 0.35em 0.65em;
+    font-size: .75em;
+    font-weight: 700;
+    line-height: 1;
+    background-color: #F07D4F;
+    color: white;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 4px;
+    margin-left: 1rem;
+}
+
+.good-badge {
+    display: inline-block;
+    padding: 0.35em 0.65em;
+    font-size: .75em;
+    font-weight: 700;
+    line-height: 1;
+    background-color: #59b256;
+    color: white;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 4px;
+    margin-left: 1rem;
 }
 
 .wcag-col {
@@ -35,3 +65,21 @@
     padding-bottom: 0.5rem;
 }
 
+.output-txt {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding-bottom: 0.5rem;
+}
+
+.check-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #59b256;
+}
+
+.cross-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #E74C3C;
+}
