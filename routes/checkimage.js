@@ -20,10 +20,7 @@ router.post('/upload', (req, res) => {
                 imgName = img.name;
                 res.sendStatus(200);
                 console.log("imagName1: ", imgName)
-                // axios.post("http://localhost:8080/api/evaluate").then((response) => {
-                //     console.log("final result: ", response.data)
-                //     return response.data;
-                // })
+                
             } else {
                 res.sendStatus(503);
             }
