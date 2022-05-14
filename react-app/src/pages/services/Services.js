@@ -69,14 +69,14 @@ const Services = () => {
                     />
                 </div>
                 <div className="btn-zone">
-                    {(filename == "Choose File")
+                    {(filename === "Choose File")
                         ? <input type="submit" value="Evaluate" className="upload-btn" disabled="true" />
                         : <input type="submit" value="Evaluate" className="upload-btn" />
                     }
 
                 </div>
             </form>
-            {JSON.stringify(results) == "{}"
+            {JSON.stringify(results) === "{}"
                 ? null
                 : <Result displayedResults={displayedResults} />
             }

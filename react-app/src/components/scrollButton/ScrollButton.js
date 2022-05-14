@@ -27,9 +27,9 @@ const ScrollButton = () => {
 
     return (
         <div className="scroll-btn">
-            <Button> 
+            <Button>
                 <IoIosArrowDropupCircle onClick={scrollToTop}
-                    style={{ display: visible ? 'inline' : 'none' }} title="Scroll to the top."/>
+                    style={{ display: visible ? 'inline' : 'none' }} title="scroll to the top" />
             </Button>
         </div>
 
