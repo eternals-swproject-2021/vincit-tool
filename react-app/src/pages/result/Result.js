@@ -2,13 +2,10 @@ import React from "react";
 import LoadingSpinner from "../../components/loadingPage/LoadingSpinnerEvaluate";
 import { BiCheck } from "react-icons/bi"
 import { RiCloseFill } from "react-icons/ri"
-import ScrollButton from "../../components/scrollButton/ScrollButton";
-// import weblogo from './contours/web-logo.png';
+import CONTOUR from './../contours/contour.png';
 import "./result.css";
 
 export default function Result(props) {
-
-    // const [id, setID] = useState('');
 
     if (props.displayedResults.sub_evaluation === undefined) {
         console.log("is loading")
@@ -19,35 +16,33 @@ export default function Result(props) {
         <div>
             <h2 className="headline">Evaluation Result</h2>
             <div class="text-center">
-                {/* <img src={require(this.props.displayedResults.overall_img)} class="img-thumbnail" alt="Responsive image"></img>
-                        <img src={weblogo}></img> */}
-                {/* {props.displayedResults.overall_img} */}
+                <img src={CONTOUR} className="img-thumbnail" alt="Evaluated Image"></img>
 
             </div>
             <div class="container" className="result-container-header">
                 <div class="row">
-                    <div class="col-sm-4">
-                        <h5><b className="header5">WCAG AAA:</b> {props.displayedResults.wcag_AAA_percentage}
+                    <div class="col-sm-6">
+                        <h5 className="header5"><b className="header-bold">WCAG AAA: </b> {props.displayedResults.wcag_AAA_percentage}
                             {parseInt(props.displayedResults.wcag_AAA_percentage) < 50
                                 ? <span className="risk-badge"> risk</span>
                                 : <span class="good-badge"> good</span>
                             }
                         </h5>
                     </div>
-                    <div class="col-sm-4">
-                        <h5><b className="header5">WCAG AA:</b> {props.displayedResults.wcag_AA_percentage}
+                    <div class="col-sm-6">
+                        <h5 className="header5"><b className="header-bold">WCAG AA: </b>  {props.displayedResults.wcag_AA_percentage}
                             {parseInt(props.displayedResults.wcag_AA_percentage) < 50
                                 ? <span className="risk-badge"> risk</span>
                                 : <span class="good-badge"> good</span>
                             }
                         </h5>
                     </div>
-                    <div class="col-sm-4">
+                    {/* <div class="col-sm-4">
                         <h5><b className="header5">Statistics</b></h5>
-                    </div>
+                    </div> */}
                 </div>
                 <div class="row" >
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                         <div class="row">
                             <div class="col-sm-1"><b className="output-txt">ID</b>
                                 {props.displayedResults.sub_evaluation.map((item, i) => (
@@ -81,12 +76,10 @@ export default function Result(props) {
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-2"></div>
-                    <div class="col-sm-4">
-                    </div>
+                    {/* <div class="col-sm-2"></div>
+                    <div class="col-sm-4"></div> */}
                 </div>
             </div>
-            <ScrollButton/>
         </div>
     )
 }

@@ -8,6 +8,12 @@
 }
 
 .header5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-indent: 0.1em;
+}
+.header-bold {
     color: #F07D4F;
 }
 
@@ -15,7 +21,6 @@
     padding-top: 1.5rem;
     padding-left: 4.5rem;
     padding-right: 4.5rem;
-    /* padding-bottom: 1.5rem; */
 }
 
 .risk-badge {
@@ -82,4 +87,13 @@
     width: 1.5rem;
     height: 1.5rem;
     color: #E74C3C;
+}
+
+.img-thumbnail {
+    padding: 0.25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    max-width: 50%;
+    height: 50%;
 }
