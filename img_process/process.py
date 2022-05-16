@@ -61,14 +61,13 @@ class ImageProcess():
         # Add path to ./react-app/src/pages/contours/  and fix the contour img name (including for returning to response.data) 
         # to be whatever e.g. contour.png
         # so that I can import this image from local on react like import contour from './react-app/src/pages/contours/contour.png' instead
-        cv2.imwrite('./react-app/src/pages/contours/contour.'+pathlib.Path(img_name).suffix,img2)
+        cv2.imwrite('./react-app/src/pages/contours/contour'+pathlib.Path(img_name).suffix,img2)
 
         output["sub"] = img_list
         output["img"] = "./contours/"+img_name
         output["height"] = self.img.shape[0]
         output["width"] = self.img.shape[1]
 
-        #return json.dumps(output)
         return output
 
    
