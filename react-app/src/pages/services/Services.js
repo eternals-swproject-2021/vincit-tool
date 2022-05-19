@@ -80,8 +80,6 @@ const Services = () => {
                 ? null
                 : <Result displayedResults={displayedResults} />
             }
-
-
         </Fragment>
     );
 };
