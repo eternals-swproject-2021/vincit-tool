@@ -10,10 +10,7 @@ def main():
            image_data =process.ImageProcess(img)
            json_output = image_data.detect_text(sys.argv[1])
            return checktext.calculation(json_output)
-<<<<<<< HEAD
            #return json_output
-=======
->>>>>>> 8ff4bc5739b9dd2856fe9060c51a53ecf824a317
 
     
 print(main())
