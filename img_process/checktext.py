@@ -1074,14 +1074,5 @@ def calculation(json_data):
 
         item['text_size'] = pt_size
 
-
-    """     print(id_list)
-    print(box_height_list)
-    print(text_height)
-    print(text_size)
-    print(id_font)
-    print(image_height)
-    print(image_width) """
-
     return json.dumps(json_data)
 
