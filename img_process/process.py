@@ -24,7 +24,7 @@ class ImageProcess():
         
         return self.draw_contours(edges,img_name) """
     
-    def draw_contours(self,img,img_name):
+    """ def draw_contours(self,img,img_name):
         output = {}
         font = cv2.FONT_HERSHEY_SIMPLEX
         img_list = []
@@ -72,7 +72,7 @@ class ImageProcess():
 
         #return json.dumps(output)
         return output
-
+ """
     def detect_text(self,img_name):
         font = cv2.FONT_HERSHEY_SIMPLEX
         output = {}

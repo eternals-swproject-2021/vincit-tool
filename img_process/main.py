@@ -11,7 +11,7 @@ def main():
            #json_output = image_data.dilate_image(sys.argv[1])
            json_output = image_data.detect_text(sys.argv[1])
            return checktext.calculation(json_output)
-           return json_output
+           #return json_output
 
     
 print(main())
