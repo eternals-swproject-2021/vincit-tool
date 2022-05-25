@@ -41,40 +41,6 @@ const checkContrastRGB = (color1, color2) => {
     return contrastRatio(luminance1, luminance2);
 }
 
-// Large Text:
-// Bold text and larger than 14
-// Normal text and larger than 18
-const checkLargeText = (textSize, isBold) => {
-    if((textSize > 14 && isBold) || (textSize > 18)){
-        return true;
-    } else {
-        return false;
-    }
-}
-
-const wcagCheck = (ratio, level, isLargeText) => {
-    let maxRatio;
-    if(level === 'AA' && isLargeText){
-        maxRatio = WCAG_AA_LARGE;
-    }
-    else if(level === 'AA' && !isLargeText){
-        maxRatio = WCAG_AA_NORMAL;
-    }
-    else if(level === 'AAA' && isLargeText){
-        maxRatio = WCAG_AAA_LARGE;
-    }
-    else if(level === 'AAA' && !isLargeText){
-        maxRatio = WCAG_AAA_NORMAL;
-    }
-
-    if(ratio >= maxRatio){
-        return true;
-    }
-    else {
-        return false;
-    }
-}
-
 const formatRatio = (ratio) => {
 	let ratioAsFloat = ratio.toFixed(2)
 	let isInteger = Number.isInteger(parseFloat(ratioAsFloat))
@@ -100,42 +66,53 @@ router.post('/color-contrast', (req, res) => {
     sub.forEach((sub_wcag) => {
         let ratio = checkContrastRGB(sub_wcag.color_1, sub_wcag.color_2);
         let ratioFmt = formatRatio(ratio);
-        
-        let isLargeText = checkLargeText(sub_wcag.text_size, sub_wcag.is_bold);
-        
-        let wcagAA = wcagCheck(ratio, 'AA', isLargeText);
-        let wcagAAA = wcagCheck(ratio, 'AAA', isLargeText);
+                
+        let wcag_AA_normal = (ratio >= WCAG_AA_NORMAL) ? true : false;
+        let wcag_AA_large = (ratio >= WCAG_AA_LARGE) ? true : false;
+        let wcag_AAA_normal = (ratio >= WCAG_AAA_NORMAL) ? true : false;
+        let wcag_AAA_large = (ratio >= WCAG_AAA_LARGE) ? true : false;
 
         const wcag = {
             id: sub_wcag.id,
             ratio: ratioFmt,
-            wcag_AA: wcagAA,
-            wcag_AAA: wcagAAA,   
+            wcag_AA_normal: wcag_AA_normal,
+            wcag_AA_large: wcag_AA_large,
+            wcag_AAA_normal: wcag_AAA_normal,
+            wcag_AAA_large: wcag_AAA_large
         }
         subEvaluation.push(wcag);
     });
 
-    const wcagAATrue = subEvaluation.filter((subEval) => {
-        return subEval.wcag_AA == true;
+    const wcagAANormalTrue = subEvaluation.filter((subEval) => {
+        return subEval.wcag_AA_normal == true;
     });
 
-    const wcagAAATrue = subEvaluation.filter((subEval) => {
-        return subEval.wcag_AAA == true;
+    const wcagAALargeTrue = subEvaluation.filter((subEval) => {
+        return subEval.wcag_AA_large == true;
     });
 
-    let wcagAAPercentage = wcagAATrue.length / subEvaluation.length * 100;
-    let wcagAAAPercentage = wcagAAATrue.length / subEvaluation.length * 100;
+    const wcagAAANormalTrue = subEvaluation.filter((subEval) => {
+        return subEval.wcag_AAA_normal == true;
+    });
+
+    const wcagAAALargeTrue = subEvaluation.filter((subEval) => {
+        return subEval.wcag_AAA_large == true;
+    });
+
+    let wcagAANormalPercentage = wcagAANormalTrue.length / subEvaluation.length * 100;
+    let wcagAALargePercentage = wcagAALargeTrue.length / subEvaluation.length * 100;
+    let wcagAAANormalPercentage = wcagAAANormalTrue.length / subEvaluation.length * 100;
+    let wcagAAALargePercentage = wcagAAALargeTrue.length / subEvaluation.length * 100;
 
     res.send({
         overall_img: `${img}`,
-        wcag_AA_percentage: `${wcagAAPercentage.toFixed(2)} %`,
-        wcag_AAA_percentage: `${wcagAAAPercentage.toFixed(2)} %`,
+        wcag_AA_normal_percentage: `${wcagAANormalPercentage.toFixed(2)} %`,
+        wcag_AA_large_percentage: `${wcagAALargePercentage.toFixed(2)} %`,
+        wcag_AAA_normal_percentage: `${wcagAAANormalPercentage.toFixed(2)} %`,
+        wcag_AAA_large_percentage: `${wcagAAALargePercentage.toFixed(2)} %`,
         sub_evaluation: subEvaluation
     })
 
 });
 
-// router.get('/color-contrast', (req, res) => {
-//     res.json()
-// });
 module.exports = router;
