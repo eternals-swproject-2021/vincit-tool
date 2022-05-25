@@ -82,7 +82,7 @@ class ImageProcess():
         img_gray = cv2.bitwise_and(img_gray,img_gray, mask=mask)
         img_gray = cv2.GaussianBlur(img_gray,(3,3),cv2.BORDER_DEFAULT)
 
-        rect_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (1,1))
+        rect_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (2,2))
         edges = cv2.Canny(img_gray,180,255)
         edges = cv2.dilate(edges, rect_kernel, iterations = 1)
         edges = cv2.erode(edges, rect_kernel, iterations = 1)
@@ -95,7 +95,7 @@ class ImageProcess():
             text = results["text"][i]
             conf = int(float(results["conf"][i]))
 
-            if conf != -1 and len(text)>0 and text not in escape:
+            if conf != -1 and len(text)>1 and text not in escape:
                 num+=1
                 # extract the bounding box coordinates
                 # of the text region from  the current result
@@ -114,6 +114,8 @@ class ImageProcess():
                 colors = sorted(colors)
                 color_1 = colors[0][0]
                 color_2 = colors[-1][0]
+
+                #add finding worst color contrast
 
                 img_arr["color_1"] = color_1
                 img_arr["color_2"] = color_2
