@@ -123,7 +123,7 @@ class ImageProcess():
                 img_list.append(img_arr)
                 cv2.putText(img2,str(num),(x,y-10), font, 1.2,(0,255,0),3)
 
-        cv2.imwrite('./react-app/src/pages/contours/contour'+pathlib.Path(img_name).suffix,img2)
+        cv2.imwrite('./react-app/src/pages/contours/contour.png',img2)
 
         output["sub"] = img_list
         output["img"] = "./contours/"+img_name
