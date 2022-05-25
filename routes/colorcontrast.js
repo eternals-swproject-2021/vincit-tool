@@ -112,6 +112,10 @@ router.post('/color-contrast', (req, res) => {
         wcag_AAA_large_percentage: `${wcagAAALargePercentage.toFixed(2)} %`,
         sub_evaluation: subEvaluation
     })
+
 });
 
+// router.get('/color-contrast', (req, res) => {
+//     res.json()
+// });
 module.exports = router;
