@@ -115,7 +115,4 @@ router.post('/color-contrast', (req, res) => {
 
 });
 
-// router.get('/color-contrast', (req, res) => {
-//     res.json()
-// });
 module.exports = router;
