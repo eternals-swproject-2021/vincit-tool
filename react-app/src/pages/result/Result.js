@@ -2,7 +2,8 @@ import React from "react";
 import LoadingSpinner from "../../components/loadingPage/LoadingSpinnerEvaluate";
 import { BiCheck } from "react-icons/bi"
 import { RiCloseFill } from "react-icons/ri"
-import CONTOUR from './../contours/contour.png';
+import CONTOURPNG from './../contours/contour.png';
+
 import "./result.css";
 
 export default function Result(props) {
@@ -16,7 +17,7 @@ export default function Result(props) {
         <div>
             <h2 className="headline">Evaluation Result</h2>
             <div class="text-center">
-                <img src={CONTOUR} className="img-thumbnail" alt="Evaluated Image"></img>
+                <img src={CONTOURPNG} className="img-thumbnail" alt="Evaluated Image"></img>
 
             </div>
             <div class="container" className="result-container-header">
@@ -37,9 +38,6 @@ export default function Result(props) {
                             }
                         </h5>
                     </div>
-                    {/* <div class="col-sm-4">
-                        <h5><b className="header5">Statistics</b></h5>
-                    </div> */}
                 </div>
                 <div class="row" >
                     <div class="col-sm-12">
@@ -64,7 +62,7 @@ export default function Result(props) {
                                     </div>
                                 ))}
                             </div>
-                            <div class="col-sm-3"><b className="output-txt">WCAG AAA</b>
+                            <div class="col-sm-3"><b className="output-txt">WCAG AA</b>
                                 {props.displayedResults.sub_evaluation.map((item, i) => (
                                     <div key={i} className="output-txt">
                                         {item.wcag_AA === true
@@ -76,8 +74,6 @@ export default function Result(props) {
                             </div>
                         </div>
                     </div>
-                    {/* <div class="col-sm-2"></div>
-                    <div class="col-sm-4"></div> */}
                 </div>
             </div>
         </div>
