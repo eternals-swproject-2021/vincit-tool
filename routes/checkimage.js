@@ -14,7 +14,7 @@ router.post('/upload', (req, res) => {
             res.sendStatus(503);
         } else {
             let img = req.files.newFile;
-            if (path.extname(img.name) == '.png' | path.extname(img.name) == '.jpg' | path.extname(img.name) == '.jpeg') {
+            if (path.extname(img.name) == '.png' | path.extname(img.name) == '.jpg') {
                 img.mv('./uploads/' + img.name);
                 imgName = img.name;
                 res.sendStatus(200);
@@ -40,14 +40,13 @@ router.post('/evaluate', (req, res) => {
             const imgScript = spawn('python3', ['./img_process/main.py', imgName]);
             // collect data from script
             imgScript.stdout.on('data', (data) => {
-                dataToSend = data.toString();
+                 dataToSend = data.toString();
             });
-
             imgScript.on('close', (code) => {
                 imgName = undefined;
                 axios.post("http://localhost:8080/api/color-contrast", JSON.parse(dataToSend))
                     .then((response) => {
-                        console.log("result after check: ", response.data)
+                       console.log("result after check: ", response.data)
                        return res.json(response.data);
                     });
             });
