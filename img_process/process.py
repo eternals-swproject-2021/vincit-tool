@@ -1,8 +1,6 @@
 import cv2
 import numpy as np
-import matplotlib.pyplot as plt
 import detect
-import pathlib
 import pytesseract
 from pytesseract import Output
 
@@ -65,7 +63,7 @@ class ImageProcess():
         cv2.imwrite('./react-app/src/pages/contours/contour.png',img2)
 
         output["sub"] = img_list
-        output["img"] = "./contours/contour.png"
+        output["img"] = "./react-app/src/pages/contours/contour.png"
 
         return output
 
