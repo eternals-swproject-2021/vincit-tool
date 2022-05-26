@@ -1,7 +1,7 @@
+import json
 import process
 import cv2
 import sys
-import checktext
 
 
 def main():
@@ -9,7 +9,7 @@ def main():
            img = cv2.imread('./uploads/'+sys.argv[1])
            image_data =process.ImageProcess(img)
            json_output = image_data.detect_text(sys.argv[1])
-           return checktext.calculation(json_output)
+           return json.dumps(json_output)
 
     
 print(main())
