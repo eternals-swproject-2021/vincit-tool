@@ -20,25 +20,6 @@ export default function Result(props) {
                 <img src={CONTOURPNG} className="img-thumbnail" alt="Evaluated Image"></img>
 
             </div>
-            <div class="container" className="result-container-header">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <h5 className="header5"><b className="header-bold">WCAG AAA: </b> {props.displayedResults.wcag_AAA_percentage}
-                            {parseInt(props.displayedResults.wcag_AAA_percentage) < 50
-                                ? <span className="risk-badge"> risk</span>
-                                : <span class="good-badge"> good</span>
-                            }
-                        </h5>
-                    </div>
-                    <div class="col-sm-6">
-                        <h5 className="header5"><b className="header-bold">WCAG AA: </b>  {props.displayedResults.wcag_AA_percentage}
-                            {parseInt(props.displayedResults.wcag_AA_percentage) < 50
-                                ? <span className="risk-badge"> risk</span>
-                                : <span class="good-badge"> good</span>
-                            }
-                        </h5>
-                    </div>
-                </div>
                 <div class="row" >
                     <div class="col-sm-12">
                         <div class="row">
@@ -47,25 +28,45 @@ export default function Result(props) {
                                     <div key={i} className="output-txt">{item.id}</div>
                                 ))}
                             </div>
-                            <div class="col-sm-5"><b className="output-txt">Color Contrast Ratio</b>
+                            <div class="col-sm-3"><b className="output-txt">Color Contrast Ratio</b>
                                 {props.displayedResults.sub_evaluation.map((item, i) => (
                                     <div key={i} className="output-txt">{item.ratio}</div>
                                 ))}
                             </div>
-                            <div class="col-sm-3"><b className="output-txt">WCAG AAA</b>
+                            <div class="col-sm-2"><b className="output-txt">WCAG AAA Normal</b>
                                 {props.displayedResults.sub_evaluation.map((item, i) => (
                                     <div key={i} className="output-txt">
-                                        {item.wcag_AAA === true
+                                        {item.wcag_AAA_normal === true
                                             ? <BiCheck className="check-icon" />
                                             : <RiCloseFill className="cross-icon" />
                                         }
                                     </div>
                                 ))}
                             </div>
-                            <div class="col-sm-3"><b className="output-txt">WCAG AA</b>
+                            <div class="col-sm-2"><b className="output-txt">WCAG AAA Large</b>
                                 {props.displayedResults.sub_evaluation.map((item, i) => (
                                     <div key={i} className="output-txt">
-                                        {item.wcag_AA === true
+                                        {item.wcag_AAA_large === true
+                                            ? <BiCheck className="check-icon" />
+                                            : <RiCloseFill className="cross-icon" />
+                                        }
+                                    </div>
+                                ))}
+                            </div>
+                            <div class="col-sm-2"><b className="output-txt">WCAG AA Normal</b>
+                                {props.displayedResults.sub_evaluation.map((item, i) => (
+                                    <div key={i} className="output-txt">
+                                        {item.wcag_AA_normal === true
+                                            ? <BiCheck className="check-icon" />
+                                            : <RiCloseFill className="cross-icon" />
+                                        }
+                                    </div>
+                                ))}
+                            </div>
+                            <div class="col-sm-2"><b className="output-txt">WCAG AA Large</b>
+                                {props.displayedResults.sub_evaluation.map((item, i) => (
+                                    <div key={i} className="output-txt">
+                                        {item.wcag_AA_large === true
                                             ? <BiCheck className="check-icon" />
                                             : <RiCloseFill className="cross-icon" />
                                         }
@@ -76,7 +77,6 @@ export default function Result(props) {
                     </div>
                 </div>
             </div>
-        </div>
     )
 }
 
