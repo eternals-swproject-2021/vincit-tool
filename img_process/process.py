@@ -1,8 +1,6 @@
 import cv2
 import numpy as np
-import matplotlib.pyplot as plt
 import detect
-import pathlib
 import pytesseract
 from pytesseract import Output
 
@@ -36,7 +34,7 @@ class ImageProcess():
             text = results["text"][i]
             conf = int(float(results["conf"][i]))
 
-            if conf != -1 and len(text)>1 and text not in escape:
+            if conf != -1 and len(text)>2 and text not in escape:
                 num+=1
                 # extract the bounding box coordinates
                 # of the text region from  the current result
@@ -65,7 +63,7 @@ class ImageProcess():
         cv2.imwrite('./react-app/src/pages/contours/contour.png',img2)
 
         output["sub"] = img_list
-        output["img"] = "./contours/contour.png"
+        output["img"] = "./react-app/src/pages/contours/contour.png"
 
         return output
 
