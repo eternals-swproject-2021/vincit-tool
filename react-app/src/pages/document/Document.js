@@ -30,6 +30,30 @@ const Document = () => {
                         This includes text on images, icons, and buttons, as well as other graphical information such as diagrams and maps.
                         Choosing the text size, background and foreground colors with minimum contrast ratio will lead to much higher visibility across a wider range of users, especially people with color-blindness and the elders.
                         <b> Our tool aims to empower web designers or front-end developers to have awareness and address the color accessibility in their designs.</b></p>
+                    <div className="measurement-content">
+                        <h3><b>WCAG 2.1 Color Contrast Measurement</b></h3>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <b>Contrast Minimum (Level AA)</b><br></br>
+                                Contrast Ratio - 4.5:1 (Normal Text) <br></br>
+                                Contrast Ratio - 3:1 (Large Text) <br></br>
+                            </div>
+                            <div class="col-sm-4">
+                                <b>Contrast Enhanced (Level AAA)</b><br></br>
+                                Contrast Ratio - 7:1 (Normal Text) <br></br>
+                                Contrast Ratio - 4.5:1 (Large Text)
+                            </div>
+                            <div class="col-sm-4">
+                                <b>Large Text Consideration for Font Size</b><br></br>
+                                * 14pt and bold upwards <br></br>
+                               * 18pt and normal upwards
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
                 </div>
             </div>
             <div class="p-5 mb-4 rounded-3 white">
