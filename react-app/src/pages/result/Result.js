@@ -46,7 +46,7 @@ export default function Result(props) {
                             ))}
                         </div>
                         <div class="col-sm-2">
-                            <b className="output-txt">WCAG AAA Normal<span className="tooltip2"><RiQuestionFill className="fa fa-chevron-circle-right hvr-icon" /><span className="tooltiptext2">Minimum Contrast Ratio of WCAG AAA Normal Text is 7:1.</span></span></b>
+                            <b className="output-txt">WCAG AAA Normal<span className="tooltip2"><RiQuestionFill className="fa fa-chevron-circle-right hvr-icon2" /><span className="tooltiptext2">Minimum Contrast Ratio of WCAG AAA Normal Text is 7:1.</span></span></b>
                             {props.displayedResults.sub_evaluation.map((item, i) => (
                                 <div key={i} className="output-txt">
                                     {item.wcag_AAA_normal === true
@@ -57,7 +57,7 @@ export default function Result(props) {
                             ))}
                         </div>
                         <div class="col-sm-2">
-                            <b className="output-txt">WCAG AAA Large<span className="tooltip2"><RiQuestionFill className="fa fa-chevron-circle-right hvr-icon" /><span className="tooltiptext2">Minimum Contrast Ratio of WCAG AAA Large Text is 4.5:1.</span></span></b>
+                            <b className="output-txt">WCAG AAA Large<span className="tooltip2"><RiQuestionFill className="fa fa-chevron-circle-right hvr-icon2" /><span className="tooltiptext2">Minimum Contrast Ratio of WCAG AAA Large Text is 4.5:1.</span></span></b>
                             {props.displayedResults.sub_evaluation.map((item, i) => (
                                 <div key={i} className="output-txt">
                                     {item.wcag_AAA_large === true
@@ -68,7 +68,7 @@ export default function Result(props) {
                             ))}
                         </div>
                         <div class="col-sm-2">
-                            <b className="output-txt">WCAG AA Normal<span className="tooltip2"><RiQuestionFill className="fa fa-chevron-circle-right hvr-icon" /><span className="tooltiptext2">Minimum Contrast Ratio of WCAG AA Normal Text is 4.5:1.</span></span></b>
+                            <b className="output-txt">WCAG AA Normal<span className="tooltip2"><RiQuestionFill className="fa fa-chevron-circle-right hvr-icon2" /><span className="tooltiptext2">Minimum Contrast Ratio of WCAG AA Normal Text is 4.5:1.</span></span></b>
                             {props.displayedResults.sub_evaluation.map((item, i) => (
                                 <div key={i} className="output-txt">
                                     {item.wcag_AA_normal === true
@@ -79,7 +79,7 @@ export default function Result(props) {
                             ))}
                         </div>
                         <div class="col-sm-2">
-                            <b className="output-txt">WCAG AA Large<span className="tooltip2"><RiQuestionFill className="fa fa-chevron-circle-right hvr-icon" /><span className="tooltiptext2">Minimum Contrast Ratio of WCAG AA Large Text is 3:1.</span></span></b>
+                            <b className="output-txt">WCAG AA Large<span className="tooltip2"><RiQuestionFill className="fa fa-chevron-circle-right hvr-icon2" /><span className="tooltiptext2">Minimum Contrast Ratio of WCAG AA Large Text is 3:1.</span></span></b>
                             {props.displayedResults.sub_evaluation.map((item, i) => (
                                 <div key={i} className="output-txt">
                                     {item.wcag_AA_large === true
