@@ -33,7 +33,7 @@ const Home = () => {
                         <li class="description_ul_li">
                             <img src={HOWTO1} class="description_ul_li_img" alt="upload-screenshot"></img>
                             <p class="description_ul_li_p">
-                                1) Upload the screenshot <br/>on Services page <br/>
+                                1) Upload a .jpg, .jpeg or .png <br/> image on Services page <br/>
                             </p>
                         </li>
                         <li class="description_ul_li">
