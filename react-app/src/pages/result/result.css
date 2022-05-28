@@ -1,3 +1,13 @@
+.error-div {
+    padding-top: 4.5rem;
+}
+
+.error-msg {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
 .headline {
     display: flex;
     justify-content: center;
