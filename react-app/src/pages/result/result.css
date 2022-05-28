@@ -97,3 +97,32 @@
     max-width: 50%;
     height: 50%;
 }
+
+.tooltip2 {
+    position: relative;
+    display: inline-block;
+    margin-left: 2px;
+  }
+  
+  .tooltip2 .tooltiptext2 {
+    visibility: hidden;
+    width: 350px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 5px;
+    border-radius: 6px;
+    font-size: 0.75em;
+    position: absolute;
+    z-index: 1;
+    bottom: 25px;
+    right: 0px;
+  }
+  
+  .tooltip2:hover .tooltiptext2 {
+    visibility: visible;
+  }
+
+  .hvr-icon {
+      color: #F66934;
+  }

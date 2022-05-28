@@ -14,7 +14,7 @@ router.post('/upload', (req, res) => {
             res.sendStatus(503);
         } else {
             let img = req.files.newFile;
-            if (path.extname(img.name) == '.png' | path.extname(img.name) == '.jpg') {
+            if (path.extname(img.name) == '.png' | path.extname(img.name) == '.jpg' | path.extname(img.name) == '.jpeg') {
                 img.mv('./uploads/' + img.name);
                 imgName = img.name;
                 res.sendStatus(200);

@@ -73,7 +73,6 @@ const Services = () => {
                         ? <input type="submit" value="Evaluate" className="upload-btn" disabled="true" />
                         : <input type="submit" value="Evaluate" className="upload-btn" />
                     }
-
                 </div>
             </form>
             {JSON.stringify(results) === "{}"

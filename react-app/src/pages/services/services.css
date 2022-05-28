@@ -10,27 +10,6 @@
     padding-right: 4.5rem;
 }
 
-progress {
-    display: flex;
-    height: 1rem;
-    overflow: hidden;
-    font-size: .75rem;
-    background-color: #e9ecef;
-    border-radius: 0.25rem;
-}
-
-.progress-bar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
-    color: #fff;
-    text-align: center;
-    white-space: nowrap;
-    background-color: #F07D4F;
-    transition: width .6s ease;
-}
-
 .btn-zone {
     display: flex;
     padding-top: 1.5rem;
