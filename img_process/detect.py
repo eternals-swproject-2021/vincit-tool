@@ -21,7 +21,7 @@ class ColorDetector():
     def most_common(self):
         arr = []
         self.count()
-        self.number_counter = Counter(self.manual_count).most_common(10)
+        self.number_counter = Counter(self.manual_count).most_common(40)
         for rgb in self.number_counter:
             arr.append(rgb)
     
