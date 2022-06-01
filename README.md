@@ -16,12 +16,17 @@ Running a Software Project 2022, LUT University
 Jarno Ojala from Vincit Company Finland
 
 ===================================================================================
-## Installation Requirement
-1. Node.js
-2. React.js
-3. python3 pip3
-4. python OpenCV
-5. pytesseract
+## Prerequisite
+1. python3
+2. pip3
+
+`python3 install OpenCV`
+`python3 install pytesseract`
+
+and 
+
+`pip3 install OpenCV`
+`pip3 install pytesseract`
 
 ## How to run this project :
 Back-End :
