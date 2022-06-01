@@ -19,6 +19,8 @@ Jarno Ojala from Vincit Company Finland
 ## Prerequisite
 1. python3
 2. pip3
+3. OpenCV (version 4.5.5)
+4. Pytesseract (version 5.1.0)
 
 `python3 install OpenCV`
 `python3 install pytesseract`
