@@ -74,6 +74,17 @@ const About = () => {
                         <div className="col-lg-4 col-md-6 d-flex align-items-stretch align-center">
                             <div className="member" data-aos="fade-up" data-aos-delay="100">
                                 <div className="member-img">
+                                    <img src={RAKKAN} className="img" alt="Rakkan Tiasakul"></img>
+                                </div>
+                                <div className="member-info">
+                                    <h4>Rakkan Tiasakul</h4>
+                                    <span>Front-end Developer, SE4GD</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-lg-4 col-md-6 d-flex align-items-stretch align-center">
+                            <div className="member" data-aos="fade-up" data-aos-delay="100">
+                                <div className="member-img">
                                     <img src={ARINI} className="img" alt="Arini N. Rohmah"></img>
                                 </div>
                                 <div className="member-info">
@@ -101,17 +112,6 @@ const About = () => {
                                 <div className="member-info">
                                     <h4>Rajitha Manellanga</h4>
                                     <span>Back-end Developer, SE4GD</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6 d-flex align-items-stretch align-center">
-                            <div className="member" data-aos="fade-up" data-aos-delay="100">
-                                <div className="member-img">
-                                    <img src={RAKKAN} className="img" alt="Rakkan Tiasakul"></img>
-                                </div>
-                                <div className="member-info">
-                                    <h4>Rakkan Tiasakul</h4>
-                                    <span>Front-end Developer, SE4GD</span>
                                 </div>
                             </div>
                         </div>
