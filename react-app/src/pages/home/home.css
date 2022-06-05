@@ -24,9 +24,9 @@
     border-radius: 9999px;
     border-style: solid;
     border-width: 2px;
-    border-color: #F07D4F;
+    border-color: #FA682E;
     text-decoration: none;
-    color: #F07D4F;
+    color: #FA682E;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-font-smoothing: antialiased;
   }
@@ -51,11 +51,11 @@
 .ref-link:hover {
     color: white;
     border-color: white;
-    background-color: #F07D4F;
+    background-color: #FA682E;
 }
 
 .brief-description {
-    background-color: #F07D4F;
+    background-color: #FA682E;
 }
 
 .header-desc {
@@ -64,7 +64,7 @@
     left: 3%;
     display: inline;
     margin: 1.5rem 0;
-    color: black;
+    color: white;
     font-weight: 600;
     font-size: 1.5rem;
 }
@@ -99,6 +99,8 @@
     font-size: 1rem;
     padding: 1rem;
     color: white;
+    text-align: center;
+    font-weight: bold;
 }
 
 .description_ul_li_img {
@@ -111,7 +113,7 @@
 
 .navigate-icon {
     height: 5em;
-    width: 2em;
+    width: 3.5em;
     color: white;
 }
 

@@ -1,0 +1,18 @@
+.github-btn {
+    background: white;
+    color: black;
+    outline: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    border: 1px solid black;
+    transition: all .5s ease-in-out;
+    border-radius: 0.5rem;
+}
+
+.github-btn:hover {
+    background: black;
+    border: 1px solid white;
+    color: white;
+    border-radius: 0.5rem;
+}

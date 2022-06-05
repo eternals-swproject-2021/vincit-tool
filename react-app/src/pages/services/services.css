@@ -4,12 +4,18 @@
     align-items: center;
 }
 
-.file-list {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+.upload-section {
+    padding-top: 4.5rem;
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
 }
 
-.evaluate-btn:disabled {
+.btn-zone {
+    display: flex;
+    padding-top: 1.5rem;
+}
+
+.upload-btn:disabled {
     opacity: 0.65; 
     cursor: not-allowed;
     margin-left: auto;
@@ -29,12 +35,12 @@
     justify-content: center;
 }
 
-.evaluate-btn:enabled {
+.upload-btn:enabled {
     margin-left: auto;
     margin-right: auto;
     display: block;
-    background-color: #59b256;
-    border-color: #59b256;
+    background-color: #FA682E;
+    border-color: #FA682E;
     border-radius: 4px;
     width: 200px;
     height: 52px;
@@ -47,9 +53,7 @@
     justify-content: center;
 }
 
-.evaluate-btn:hover :enabled {
-    background-color: #7AB155;
-    border-color: #7AB155;
+.upload-btn:hover :enabled {
+    background-color: #FA682E;
+    border-color: #FA682E;
 }
-
-

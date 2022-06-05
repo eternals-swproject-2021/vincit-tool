@@ -1,73 +1,86 @@
-import { React, useState, Component } from 'react'
-import FileUpload from '../../components/fileUpload/FileUpload';
-import FileList from '../../components/fileList/FileList';
-import LoadingSpinner from '../../components/loadingPage/LoadingSpinner';
-import './services.css';
+import React, { Fragment, useState, useEffect } from "react";
+import Result from "../result/Result";
+import axios from "axios";
+
+import "./services.css";
+
 
 const Services = () => {
-    const [files, setFiles] = useState([])
 
-    const removeFile = (filename) => {
-        setFiles(files.filter(file => file.name !== filename))
-    }
+    const [file, setFile] = useState("");
+    const [filename, setFilename] = useState("Choose File");
+    const [results, setResults] = useState({});
+    const [displayedResults, setDisplayedResults] = useState({});
 
-    const [users, setUsers] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
-    const [errorMessage, setErrorMessage] = useState("");
-
-    const handleFetch = () => {
-        setIsLoading(true);
-        fetch("https://color-contrast.free.beeceptor.com")
-            .then((respose) => respose.json())
-            .then((respose) => {
-                setUsers(respose.data)
-                setIsLoading(false)
-                // Optional code to simulate delay
-                setTimeout(() => {
-                  setUsers(respose.data);
-                  setIsLoading(false);
-                }, 3000);
-            })
-            .catch(() => {
-                // setErrorMessage("Unable to fetch user list");
-                setIsLoading(true);
-            });
+    const onChange = e => {
+        setFile(e.target.files[0]);
+        setFilename(e.target.files[0].name);
     };
 
-    const renderUser = (
-        <div className="userlist-container">
-            {users.map((item, index) => (
-                <div className="user-container" key={index}>
-                    <img src={item.avatar} alt="" />
-                    <div className="userDetail">
-                        <div className="first-name">{`${item.first_name}                
-                                       ${item.last_name}`}</div>
-                        <div className="last-name">{item.email}</div>
-                    </div>
-                </div>
-            ))}
-        </div>
-    );
+    const onSubmit = async e => {
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append(
+            "newFile",
+            file,
+            file.name
+        )
+
+        try {
+            const response = await axios.post("http://localhost:8080/api/upload", formData)
+            console.log(response.data);
+            evaluate();
+            console.log(displayedResults);
+
+        } catch (err) {
+            if (err.response.status === 500) {
+                console.log("There was a problem with the server");
+            } else {
+                console.log(err.response.data.msg);
+            }
+        }
+    };
+
+    const evaluate = async () => {
+        try {
+            const response = await axios.post("http://localhost:8080/api/evaluate")
+            console.log(response.data);
+            setResults(response.data);
+            setDisplayedResults(response.data);
+        } catch (err) {
+            console.log(err)
+        }
+    };
+
+    useEffect(() => {
+    }, [results]);
 
     return (
-        <div>
+        <Fragment>
             <h1 className="headline">Check Contrast</h1>
-            <div class="px-4 py-5 text-center">
-                <FileUpload files={files} setFiles={setFiles}
-                    removeFile={removeFile} />
-            </div>
-            <FileList className="file-list" files={files} removeFile={removeFile} />
-            <div>
-                {files.length === 0
-                    ? <input className="evaluate-btn" type="submit" value="Evaluate" disabled="true" />
-                    : <input className="evaluate-btn" type="submit" value="Evaluate" onClick={handleFetch} disabled={isLoading}/>}
-            </div>
-            {isLoading ? <LoadingSpinner /> : renderUser}
-            {errorMessage && <div className="error">{errorMessage}</div>}
-        </div>
+            <form onSubmit={onSubmit}>
+                <div class="custom-file mb-4" className="upload-section">
+                    <input
+                        type="file"
+                        className="custom-file-input"
+                        id="customFile"
+                        onChange={onChange}
+                        accept=".png, .jpg, .jpeg"
+                    />
+                </div>
+                <div className="btn-zone">
+                    {(filename === "Choose File")
+                        ? <input type="submit" value="Evaluate" className="upload-btn" disabled="true" />
+                        : <input type="submit" value="Evaluate" className="upload-btn" />
+                    }
+                </div>
+            </form>
+            {JSON.stringify(results) === "{}"
+                ? null
+                : <Result displayedResults={displayedResults} />
+            }
+        </Fragment>
     );
-}
+};
 
-
-export default Services
-
+export default Services;

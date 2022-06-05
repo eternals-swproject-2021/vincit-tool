@@ -1,0 +1,138 @@
+.error-div {
+    padding-top: 4.5rem;
+}
+
+.error-msg {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.headline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    padding-top: 4.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.header5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-indent: 0.1em;
+}
+.header-bold {
+    color: #FA682E;
+}
+
+.result-container-header {
+    padding-top: 1.5rem;
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+}
+
+.risk-badge {
+    display: inline-block;
+    padding: 0.35em 0.65em;
+    font-size: .75em;
+    font-weight: 700;
+    line-height: 1;
+    background-color: #FA682E;
+    color: white;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 4px;
+    margin-left: 1rem;
+}
+
+.good-badge {
+    display: inline-block;
+    padding: 0.35em 0.65em;
+    font-size: .75em;
+    font-weight: 700;
+    line-height: 1;
+    background-color: #59b256;
+    color: white;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 4px;
+    margin-left: 1rem;
+}
+
+.wcag-col {
+    justify-content: center;
+    display: flex;
+
+}
+
+.wcag-desc{
+    padding-top: 0.5rem;
+    padding-left: 9.5rem;
+    padding-right: 15rem
+}
+
+.row {
+    padding-top: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.output-txt {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding-bottom: 0.5rem;
+}
+
+.check-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #59b256;
+}
+
+.cross-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #E74C3C;
+}
+
+.img-thumbnail {
+    padding: 0.25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    max-width: 50%;
+    height: 50%;
+}
+
+.tooltip2 {
+    position: relative;
+    display: inline-block;
+    margin-left: 2px;
+  }
+  
+  .tooltip2 .tooltiptext2 {
+    visibility: hidden;
+    width: 350px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 5px;
+    border-radius: 6px;
+    font-size: 0.75em;
+    position: absolute;
+    z-index: 1;
+    bottom: 25px;
+    right: 0px;
+  }
+  
+  .tooltip2:hover .tooltiptext2 {
+    visibility: visible;
+  }
+
+  .hvr-icon2 {
+      color: #F66934;
+  }

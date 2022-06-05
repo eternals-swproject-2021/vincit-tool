@@ -6,18 +6,17 @@ import HOWTO1 from '../../assets/1.png'
 import HOWTO2 from '../../assets/2.png'
 import HOWTO3 from '../../assets/3.png'
 import HOWTO4 from '../../assets/4.png'
-import { MdNavigateNext } from 'react-icons/md'
-import { BsCheckAll } from 'react-icons/bs'
 
 const Home = () => {
+
     return (
         <div>
-            <div class="px-4 py-5 my-5 text-center">
+            <div class="px-4 py-2 my-4 text-center">
                 <img class="d-block mx-auto mb-4" src={WEBLOGO} alt="web-logo" width="150" height="150"></img>
                 <h3 class="subheader">aCHECK</h3>
                 <h1 class="display-5 fw-bold">Color Contrast Evaluator</h1>
                 <div class="col-lg-6 mx-auto">
-                    <p class="lead mb-4">Ensure the contrast ratio of the background and text colors on your pictures or websites look visually accessible. Following WCAG 2.1 Guidelines for optimum contrast is helpful for users, especially for those with visual impairments like color blindness and the elders.</p>
+                    <p class="lead mb-4" className="home-desc">Ensure the contrast ratio of the background and text colors on your pictures or websites look visually accessible. Following WCAG 2.1 Guidelines for optimum contrast is helpful for users, especially for those with visual impairments like color blindness and the elders.</p>
                     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
                         <a href="/services" class="hvr-icon-forward ref-link">
                             Check Contrast Now
@@ -34,28 +33,25 @@ const Home = () => {
                         <li class="description_ul_li">
                             <img src={HOWTO1} class="description_ul_li_img" alt="upload-screenshot"></img>
                             <p class="description_ul_li_p">
-                                Upload the screenshot <br/>  <br/>
+                                1) Upload a .jpg, .jpeg or .png <br/> image on Services page <br/>
                             </p>
                         </li>
-                        <MdNavigateNext className="navigate-icon"/>
                         <li class="description_ul_li">
                             <img src={HOWTO2} class="description_ul_li_img" alt="evaluate-tool"></img>
                             <p class="description_ul_li_p">
-                                Let our tool evaluate <br/> the color contrast
+                                2) Let our tool evaluate <br/>the color contrast
                             </p>
                         </li>
-                        <MdNavigateNext className="navigate-icon"/>
                         <li class="description_ul_li">
                             <img src={HOWTO3} class="description_ul_li_img" alt="get-report"></img>
                             <p class="description_ul_li_p">
-                                Get a report! <br/>  <br/>
+                                3) Get a report based on<br/> WCAG 2.1 Guidelines <br/>
                             </p>
                         </li>
-                        <BsCheckAll className="navigate-icon"/>
                         <li class="description_ul_li">
                             <img src={HOWTO4} class="description_ul_li_img" alt="open-source"></img>
                             <p class="description_ul_li_p">
-                               * Open-source :) <br/>  <br/>
+                               * Open-source :) <br/> Visit on our repo on GitHub!  <br/>
                             </p>
                         </li>
                     </ul>

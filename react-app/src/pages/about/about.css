@@ -15,7 +15,9 @@
 }
 
 .i-wrapper {
-    padding: 50px;
+    padding-top: 4.5rem;
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
     height: 50%;
     display: flex;
     flex-direction: column;
@@ -29,7 +31,7 @@
 
 .i-intro-2 {
     font-size: 35px;
-    color: #F66934;
+    color: #FA682E;
 }
 
 .i-content {
@@ -108,14 +110,12 @@
 }
 
 section {
-    padding: 60px 0;
     overflow: hidden;
     position: relative;
 }
 
 .section-title {
     text-align: center;
-    padding-bottom: 30px;
     position: relative;
 }
 

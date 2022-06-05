@@ -4,13 +4,19 @@
     align-items: center;
 }
 
+.headline2 {
+    font-size: 47.5px;
+    font-weight: bold;
+}
+
 .lead {
     font-size: 16px;
     text-align: justify;
+    font-weight: 400;
 }
 
 .color-section {
-    background-color: #F07D4F;
+    background-color: #FA682E;
 }
 
 .topic-header {
@@ -18,14 +24,24 @@
     margin: 1.5rem 0;
     color: black;
     font-weight: 600;
-    padding-left: 50px;
+    padding-left: 4.5rem;
 }
 
 .topic-content {
     font-weight: 400;
     font-size: 16px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+    padding-top: 1rem;
+    color: black;
+    text-align: justify;
+}
+
+.measurement-content{
+    font-weight: 400;
+    font-size: 16px;
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
     padding-top: 1rem;
     color: black;
     text-align: justify;
@@ -33,12 +49,11 @@
 
 .method-header {
     text-align: center;
-    color: #F07D4F;
+    color: #FA682E;
     padding-bottom: 16px;
 }
 
 .method-content {
     text-align: justify;
     font-size: 16px;
-
 }
