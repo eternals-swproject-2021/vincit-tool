@@ -39,8 +39,8 @@
     margin-left: auto;
     margin-right: auto;
     display: block;
-    background-color: #F07D4F;
-    border-color: #F07D4F;
+    background-color: #FA682E;
+    border-color: #FA682E;
     border-radius: 4px;
     width: 200px;
     height: 52px;
@@ -54,6 +54,6 @@
 }
 
 .upload-btn:hover :enabled {
-    background-color: #F07D4F;
-    border-color: #F07D4F;
+    background-color: #FA682E;
+    border-color: #FA682E;
 }

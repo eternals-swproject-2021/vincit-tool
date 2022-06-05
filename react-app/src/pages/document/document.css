@@ -12,10 +12,11 @@
 .lead {
     font-size: 16px;
     text-align: justify;
+    font-weight: 400;
 }
 
 .color-section {
-    background-color: #F07D4F;
+    background-color: #FA682E;
 }
 
 .topic-header {
@@ -48,12 +49,11 @@
 
 .method-header {
     text-align: center;
-    color: #F07D4F;
+    color: #FA682E;
     padding-bottom: 16px;
 }
 
 .method-content {
     text-align: justify;
     font-size: 16px;
-
 }

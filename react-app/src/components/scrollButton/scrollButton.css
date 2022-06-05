@@ -8,7 +8,7 @@
     z-index: 20;
   }
   .icon-style{
-    background-color: #F07D4F;
+    background-color: #FA682E;
     border: 2px solid #fff;
     border-radius: 50%;
     height: 50px;
@@ -21,8 +21,8 @@
   .icon-style:hover{
     animation: none;
     background: #fff;
-    color: #F07D4F;
-    border: 2px solid #F07D4F;
+    color: #FA682E;
+    border: 2px solid #FA682E;
   }
   @keyframes movebtn {
     0%{

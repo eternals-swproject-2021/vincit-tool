@@ -16,7 +16,7 @@ const Home = () => {
                 <h3 class="subheader">aCHECK</h3>
                 <h1 class="display-5 fw-bold">Color Contrast Evaluator</h1>
                 <div class="col-lg-6 mx-auto">
-                    <p class="lead mb-4">Ensure the contrast ratio of the background and text colors on your pictures or websites look visually accessible. Following WCAG 2.1 Guidelines for optimum contrast is helpful for users, especially for those with visual impairments like color blindness and the elders.</p>
+                    <p class="lead mb-4" className="home-desc">Ensure the contrast ratio of the background and text colors on your pictures or websites look visually accessible. Following WCAG 2.1 Guidelines for optimum contrast is helpful for users, especially for those with visual impairments like color blindness and the elders.</p>
                     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
                         <a href="/services" class="hvr-icon-forward ref-link">
                             Check Contrast Now
